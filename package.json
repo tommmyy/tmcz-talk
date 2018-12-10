@@ -14,9 +14,8 @@
     "styled-system": "^3.1.11"
   },
   "scripts": {
-    "start": "mdx-deck src/deck.mdx --port=3333",
-    "build": "mdx-deck build src/deck.mdx",
-    "pdf": "mdx-deck pdf src/deck.mdx"
+    "start:tooling": "mdx-deck src/01-tooling.mdx --port=3333",
+    "start:react": "mdx-deck src/02-react.mdx --port=3333"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
