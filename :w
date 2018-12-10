@@ -74,10 +74,8 @@ export default Listed;
 - animations
 
 export default Listed;
----
-[Animovatelné CSS props](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
----
 
+---
 ## Transitions
 ---
 
@@ -88,10 +86,10 @@ export default Listed;
 ## Vykreslovací workflow prohlížeče
 
 ```
-    Loading                Rendering             Painting     Displaying
-+-------------+    +-----------------------+    +---------+    +-----+
-| HTML string | -> | Render Tree -> Layout | -> | Texture | -> | GPU |
-+-------------+    +-----------------------+    +---------+    +-----+
++-------------+    +-----------------------+    +---------+    +---------+
+| HTML string | -> | Render Tree -> Layout | -> | Texture | -> | Display |
++-------------+    +-----------------------+    +---------+    +---------+
+    Loading                Rendering              Painting      Displaying
 ```
 
 ```notes
@@ -111,47 +109,13 @@ export default Listed;
 ```
 ---
 
-## Optimalizace
+## Co jsme schopni efektivně animovat?
 
-```
-Rendering/Painting/Displaying vs. Just  Displaying
-```
+- [Animatable props](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
 
+export default Listed;
 
----
-## Reflows
-
-> -/rendering/painting/displaying
-
-```
-width		height
-height		padding
-top			bottom
-left		right
-font-size	...
-```
-
-```notes
-mění geometrii
-rendering/painting/displaying
-může způsobit řetěz. reakci
-```
----
-## Repaints
-
->	-/-/painting/displaying
-
-```
-color			background-color
-box-shadow		background-position
-border-radius	...
-```
-
-```notes
-pixely musí být překresleny
-```
 ---
 
 ## Zdroje
 
-- [Silky smooth animation with CSS](https://www.youtube.com/watch?v=bEoLCZzWZX8)
