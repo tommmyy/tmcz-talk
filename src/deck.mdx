@@ -1,0 +1,248 @@
+import { CodeSurfer } from 'mdx-deck-code-surfer';
+import { Appear, Notes, Image } from 'mdx-deck';
+import { Listed, Fronted, BackgroundImaged } from './layouts';
+import { codeSurferTitle, Ul, Li, MetaList, ImageText } from './components';
+import './init';
+export { theme } from './themes/lundegaard';
+
+# React a Redux
+
+## 1. Úvod &amp; Webpack
+
+- Tomáš Konrády
+- <a href="https://twitter.com/konnnyy">@konnnyy</a>
+- T-Mobile Workshop II - 2018
+
+<a href="https://lundegaard.eu">Lundegaard a. s.</a>
+
+export default Fronted;
+
+---
+
+## Plán
+
+- Základy Webpacku
+- React
+- React testing
+- State management
+
+```notes
+- Tooling
+  - webpack
+- React testing
+- React Animace
+	- Vanilla React
+	- React Motion
+	- Rekapitulace principů
+	- Middlewares
+	- Redux + React
+	- Modulární Redux
+- Redux
+```
+---
+
+<Image src="images/bulb.gif" />
+
+# Webpack
+
+<br />
+
+export default BackgroundImaged;
+
+---
+
+## Co vlastně je Webpack?
+
+- Module bundler
+- Task runner
+- HMR
+
+```notes
+ad 1) Implementace ES6 modulů, CommonJS, UMD.
+ad 2) Alternativy node script, grunt, gulp
+ad 3) Ad hoc reload editovaných modulů
+```
+export default Listed;
+
+---
+
+```
+yarn add -D webpack webpack-cli webpack-dev-server
+```
+
+```notes
+vysvětlit zodpovědnost jedn. modulů
+```
+
+---
+
+# Module bundler
+
+```notes
+Základní jednotka je JS modul
+následují slides s ukázkami ES, CommonJS
+```
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Vstup - CommonJS')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-cjs.js')}
+/>
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Vstup - ES 2015')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-es.js')}
+/>
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Vstup - tc39/proposal-dynamic-import')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-dynamic.js')}
+/>
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Výstup')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-output.js')}
+/>
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('webpack.config.js')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-simple.js')}
+	steps={[
+		{},
+		{ lines: [4] },
+		{ range: [5, 8] }
+	]}
+/>
+
+---
+## Ukázka - přidání Webpacku
+
+```sh
+git checkout demo-01-simple-webpack
+```
+
+```notes
+1. ukázat webpack bez webpack.config.js a představit src/
+2. přidat config z předchozího slidu a změň jméno
+3. ukázat, že se ./dist složka nevyčistila
+```
+---
+
+# Task runner
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('plugins')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-plugins.js')}
+	steps={[
+		{},
+		{ range: [6, 9] }
+	]}
+/>
+
+```notes
+vysvětlit, co který plugin dělá
+```
+
+---
+## Ukázka - `html-webpack-plugin`
+
+```sh
+git checkout demo-02-webpack-plugins
+```
+
+```notes
+1. ukaž `webpack.config.js`
+2. vybuildi a ukaž html
+3. změň jméno a ukaž, že se složka vyčistila
+```
+---
+## [Seznam dostupných pluginů](https://webpack.js.org/plugins/)
+---
+
+# Module
+
+---
+
+## Webpack
+
+- Nejen pro JavaScript moduly
+- [Loaders](https://webpack.js.org/loaders/)
+
+export default Listed;
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Přidání pravidla')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-add-rule.js')}
+/>
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Použití file-loader')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-file-loader.js')}
+/>
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Vícero loaderů')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-multiple-rules.js')}
+/>
+---
+
+## Ukázka - `babel-loader`
+
+```sh
+git checkout demo-03-webpack-module
+```
+
+```notes
+- stejné nastavení jako v babel příkladech
+- ukaz src/hello.js - používá template
+- webpack.config.js
+	- nové pravidlo
+	- odkumentuj a ukaž rozdíl v buildech - i HTML
+```
+
+---
+
+## Cvíčení
+
+```sh
+git clone https://github.com/tommmyy/tmcz-tooling.git
+
+git checkout 02-babel-webpack
+```
+
+```notes
+- okomentuj dev-server
+- řešení v `rum`
+```
+
+---
+
+## Zdroje
+
+
+---
