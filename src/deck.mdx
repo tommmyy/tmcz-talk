@@ -18,12 +18,18 @@ export { theme } from './themes/lundegaard';
 export default Fronted;
 
 ---
+# Co se stalo od minule?
+---
+<Image src="images/dianka.jpg" />
+---
+# React Hooks
+---
 
 ## Plán
 
 - Základy Webpacku
-- React
-- React testing
+- React - animace, hooks
+- Unit testing komponent
 - State management
 
 ```notes
@@ -39,6 +45,7 @@ export default Fronted;
 	- Modulární Redux
 - Redux
 ```
+export default Listed;
 ---
 
 <Image src="images/bulb.gif" />
@@ -242,7 +249,114 @@ git checkout 02-babel-webpack
 
 ---
 
+# Produkce vs. Development
+
+---
+
+## POŽADAVKY PRO DEVELOPMENT
+
+- Development server
+- Proxy na API
+- HMR
+- Source mapy
+
+export default Listed;
+---
+
+## Požadavky na produkční build
+
+- Minifikace JS/CSS/HTML
+- Long-term caching
+- Další optimalizace
+
+export default Listed;
+
+---
+## Líbí se vám následující konfigurace?
+
+[webpack.config](https://github.com/kriasoft/react-starter-kit/blob/master/tools/webpack.config.js) - react-starter-kit
+
+```notes
+- rozhodování podle isDebug
+- dlouhý, nepřehledný
+```
+
+---
+
+## Nástroje ku pomoci
+
+- [mode](https://webpack.js.org/concepts/mode/#mode-development)
+- [env](https://webpack.js.org/guides/environment-variables/)
+- [webpack-merge](https://github.com/survivejs/webpack-merge)
+
+```notes
+- mode - Klikni a vysvětli
+```
+
+---
+
+## Použití mode skrze CLI
+
+```cli
+webpack --mode=development
+
+webpack --mode=production
+```
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Použití mode ve webpack.config')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-mode.js')}
+/>
+
+---
+
+# Environments variables
+---
+## cli
+```sh
+webpack --env production
+```
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Použití env ve webpack.config')}
+	lang="js"
+	code={require('!raw-loader!./snippets/webpack-config-env.js')}
+/>
+
+---
+
+## Ukázka - `webpack-merge`
+
+```sh
+git checkout demo-04-production-build
+```
+
+```notes
+- package.json env
+- webpack.config.js
+- složka webpack
+```
+---
+
+## Další funkcionalita
+
+- Code splitting
+- [Tree shaking](https://webpack.js.org/guides/tree-shaking/)
+- [Build analysis](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+
+```notes
+proklikat odkazy
+```
+---
+
+# Otázky?
+
+---
 ## Zdroje
-
-
+- [ Webpack: From apprentice to master ](https://survivejs.com/webpack/)
+- [ Generate Webpack config ](https://generatewebpackconfig.netlify.com/)
 ---
