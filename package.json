@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start:tooling": "mdx-deck src/01-tooling.mdx --port=3333",
-    "start:react": "mdx-deck src/02-react.mdx --port=3333"
+    "start:react": "mdx-deck src/02-react.mdx --port=3333",
+    "start:testing": "mdx-deck src/03-testing.mdx --port=3333"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
