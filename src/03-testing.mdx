@@ -27,9 +27,207 @@ export default Fronted;
 ```notes
 - Snapshot testing - pro strukturu
 - Mock handlerů
+- Internal state
 - Lifecycle
 
 ```
 export default Listed;
+---
+
+# Jest & Enzyme
+
+---
+
+## Reference
+
+- [jest](https://jestjs.io/)
+- [Enzyme](https://github.com/airbnb/enzyme)
+
+```notes
+Jest - task runner - používá něco jako Jasmine
+Enzyme - pomocná knihovna pro testování reactu
+```
+---
+
+## Setup Jest
+
+```sh
+yarn add -D jest babel-jest babel-core babel-preset-env babel-preset-react
+
+yarn jest
+```
+---
+
+## Setup Enzyme
+
+```sh
+yarn add -D enzyme enzyme-adapter-react-16
+```
+---
+
+...nebo použijeme `create-react-app`
+
+---
+
+## Ukázka - setup
+
+```sh
+git clone https://github.com/tommmyy/tmcz-testing.git
+
+git checkout demo-01-setup
+```
+```notes
+- add Enzyme a adapter (předchozí slide)
+- src/setupTests.js - snippet ze stránky enzymu
+- spusť - žádný test
+- Přidej test na App - použij enzyme.shallow, a `console.log(wrapper.debug())`
+- řešení v demo-01-setup-after
+
+```
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Shallow render')}
+	lang="jsx"
+	code={require('!raw-loader!./snippets/testing-shallow-render.js')}
+/>
+
+```notes
+Co je shallow render?
+vysvětly druhy parameter
+```
+---
+
+# Testování strukury
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Assertions')}
+	lang="jsx"
+	code={require('!raw-loader!./snippets/testing-assertions.js')}
+/>
+---
+
+## Cvičení - assertions
+
+```sh
+git clone https://github.com/tommmyy/tmcz-testing.git
+
+git checkout 01-testing-structure
+```
+
+```notes
+řešení v mor
+```
+
+---
+
+## Snapshot testing
+
+- Zjednodušení testování strukutry
+- Feature Jestu
+
+export default Listed;
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Snapshot - assertion')}
+	lang="jsx"
+	code={require('!raw-loader!./snippets/testing-snapshots.js')}
+/>
+
+---
+## Ukázka - snapshots
+
+```sh
+git checkout demo-02-snapshots
+```
+
+```notes
+přidej snapshot pro App
+yarn add enzyme-to-json
+"jest" v package.json - "snapshotSerializers": ["my-serializer-module"]
+
+řešení v demo-02-snapshots-after
+```
+---
+
+# Testování chování
+
+---
+
+## Chování komponenty zahrnuje
+
+- Reakce na události
+- Změny stavu
+- Metody životní cyklu
+
+export default Listed;
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Events')}
+	lang="jsx"
+	code={require('!raw-loader!./snippets/testing-events.js')}
+	steps={[
+		{ range: [1, 2] },
+		{ range: [3, 4] },
+		{ range: [6, 8] },
+		{},
+	]}
+/>
+
+---
+
+<CodeSurfer
+	title={codeSurferTitle('Event mock')}
+	lang="jsx"
+	code={require('!raw-loader!./snippets/testing-events-mock.js')}
+	steps={[
+		{},
+		{ tokens: { 7: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] }  },
+		{},
+	]}
+/>
+---
+
+## Pozor
+
+- Metoda `simulate` pouze provolává callbacky
+- Události nejsou propagovány
+
+export default Listed;
+
+---
+
+## Cvičení - testování event
+
+```sh
+git checkout 02-testing-events
+```
+
+```notes
+řešení v oko
+```
+---
+
+
+<CodeSurfer
+	title={codeSurferTitle('State')}
+	lang="jsx"
+	code={require('!raw-loader!./snippets/testing-state.js')}
+/>
+---
+
+## Ukázka - lifecycle
+
+```sh
+git checkout demo-03-lifecycle
+```
+```notes
+jen ukaž testy
+```
 ---
 
