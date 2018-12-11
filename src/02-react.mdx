@@ -7,7 +7,7 @@ export { theme } from './themes/lundegaard';
 
 # React a Redux
 
-## 2. React - výběr témat
+## 2. React a animace
 
 - Tomáš Konrády
 - <a href="https://twitter.com/konnnyy">@konnnyy</a>
@@ -22,8 +22,6 @@ export default Fronted;
 ## Plán
 
 - Animace
-- Kontext
-- React Hooks
 
 ```notes
 - React Animace
@@ -38,8 +36,6 @@ export default Fronted;
 
 		- CSS transition - třídy,
 
-- Kontext API
-	- vysvětlení, demo, cviko - stav aplikac
 - Hooks
 	- Vysvětlení - rules, naming
 	- setup, eslint
@@ -151,7 +147,7 @@ export default Listed;
 [pen](https://codepen.io/tommmyy/pen/WLbdJe)
 ---
 
-## Demo
+## Ukázka - CSS animations
 
 ```
 git clone https://github.com/tommmyy/tmcz-animations.git
@@ -170,6 +166,11 @@ git checkout demo-01-basics
 ```
 git clone https://github.com/tommmyy/tmcz-animations.git
 git checkout 01-basics
+```
+```notes
+projdi
+přidání `intermediate` módu do ProgressBar
+řešení v luk
 ```
 ---
 
@@ -273,8 +274,10 @@ export default Listed;
 ---
 
 ## [React-transition-group](https://github.com/reactjs/react-transition-group)
+
 - Nejvíce vanilla řešení
 - Dříve `react-addons-*`
+- Pro animaci mountu/unmountu komponenty
 
 export default Listed;
 ---
@@ -286,7 +289,9 @@ export default Listed;
 - `<TransitionGroup />`
 
 export default Listed;
+
 ---
+
 ## Stavy animace
 
 ```
@@ -295,53 +300,70 @@ export default Listed;
 +--------+    +-------+    +------+
 ```
 ---
-
-## Demo - CSS Transition
-
+# CSS Transition
 ---
-## Příklad - CSS Transition
+
+## Props
+
+```
+           classNames                       Callbacks
++-------------------------------+--------------------------------+
+| appear, appearActive          | onEnter, onEntering, onEntered |
++-------------------------------+--------------------------------+
+| enter, enterActive, enterDone | onEnter, onEntering, onEntered |
++-------------------------------+--------------------------------+
+| exit, exitActive, exitDone    | onExit, onExiting, onExited    |
++-------------------------------+--------------------------------+
+```
+---
+
+## Ukázka - CSS Transition
+
+```
+git checkout demo-02-css-transition
+```
 
 ```notes
-Notifikace ve spod stránky
+- collapsible
+- Přidat CSSTransition
+- Doplnit Collapsible.css
+- řešení v demo-css-transition-after
 ```
 
 ---
 
-## Demo - Transition
+## Cvičení - CSS Transition
+
+```
+git checkout 02-css-transition
+```
 
 ```notes
-Zapouzdření Fade animace
+Hezčí collapsible
+řešení v lev
 ```
 ---
 
-## Demo - group
+## Další témata
 
-```notes
-Přídá / odebere ze seznamu
-```
+- Staggering animace
+- Interakce s pozicí myši (např. Drag&Drop)
+- SVG animace
+
+export default Listed;
 ---
 
-## Příklad
+## Knihovny ku pomoci
 
-```notes
-swipeable tabs
-```
----
-## Co dál?
+- [ React-motion ](https://github.com/chenglou/react-motion)
+- [React-pose](https://popmotion.io/pose/)
+- [React Velocity](https://github.com/google-fabric/velocity-react)
 
-- React-motion
-- React-pose
+export default Listed;
 
-```notes
-spring
-staggering
-mouse movement
-```
 ---
 ## Zdroje
 
 - [Silky smooth animation with CSS](https://www.youtube.com/watch?v=bEoLCZzWZX8)
 
----
 
-# Hooks
