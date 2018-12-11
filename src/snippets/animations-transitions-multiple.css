@@ -1,0 +1,9 @@
+a {
+	display: inline-block;
+	transition: transform .5s steps(3, end), filter 0.9s ease;
+}
+
+a:hover {
+	transform: scale(2, 2);
+	filter: hue-rotate(100deg);
+}

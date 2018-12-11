@@ -1,0 +1,12 @@
+a {
+	display: inline-block;
+	transform: scale(1, 1);
+	transition-delay: 0s;
+	transition-duration: .5s;
+	transition-property: transform;
+	transition-timing-function: ease;
+}
+
+a:hover {
+	transform: scale(2, 2);
+}

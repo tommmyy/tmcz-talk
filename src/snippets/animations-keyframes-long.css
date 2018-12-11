@@ -1,0 +1,16 @@
+@keyframes pendulum {
+	from { transform: translateX(0px); }
+	to { transform: translateX(200px); }
+}
+
+.box {
+	animation-name: pendulum;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+
+	border: 2px solid green;
+	width: 50px;
+	height: 50px;
+	background: lime;
+}

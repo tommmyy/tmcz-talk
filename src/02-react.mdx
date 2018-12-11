@@ -78,11 +78,107 @@ export default Listed;
 [Animovatelné CSS props](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
 ---
 
-## Transitions
+# Transitions
+---
+## Vyvolání přechodu
+- Změna stavu přes pseudo-class:
+- `:hover`, `:visited`, `:active`, ...
+- Změna className
+- změna CSS vlastnosti
+
+```notes
+link - never visited
+active - focused
+visited - put after link, before active and hover
+```
+export default Listed;
 ---
 
-## Výkon
-- Cíl: 60fpx
+<CodeSurfer
+	title={codeSurferTitle('CSS transitions')}
+	lang="css"
+	code={require('!raw-loader!./snippets/animations-transitions-long.css')}
+/>
+
+---
+
+- [pen](https://codepen.io/tommmyy/pen/BvyJoq)
+- [trasition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function)
+---
+
+<CodeSurfer
+	title={codeSurferTitle('CSS transitions - shortcut')}
+	lang="css"
+	lang="css"
+	code={require('!raw-loader!./snippets/animations-transitions-short.css')}
+/>
+
+---
+[pen](https://codepen.io/tommmyy/pen/maypOK)
+---
+<CodeSurfer
+	title={codeSurferTitle('CSS transitions - multiple')}
+	lang="css"
+	lang="css"
+	code={require('!raw-loader!./snippets/animations-transitions-multiple.css')}
+/>
+
+---
+[pen](https://codepen.io/tommmyy/pen/xmbprd)
+---
+
+# Animations
+
+---
+<CodeSurfer
+	title={codeSurferTitle('CSS animations')}
+	lang="css"
+	lang="css"
+	code={require('!raw-loader!./snippets/animations-keyframes-long.css')}
+/>
+
+---
+[pen](https://codepen.io/tommmyy/pen/WLbdJe)
+---
+<CodeSurfer
+	title={codeSurferTitle('CSS animations - shortcut')}
+	lang="css"
+	lang="css"
+	code={require('!raw-loader!./snippets/animations-keyframes-short.css')}
+/>
+
+---
+[pen](https://codepen.io/tommmyy/pen/WLbdJe)
+---
+
+## Demo
+
+```
+git clone https://github.com/tommmyy/tmcz-animations.git
+git checkout demo-01-basics
+```
+
+```notes
+- projdi
+- přepiš do styled components
+- řešení v demo-01-basics-after
+```
+---
+
+## Cvičení - Jednoduché CSS animace
+
+```
+git clone https://github.com/tommmyy/tmcz-animations.git
+git checkout 01-basics
+```
+---
+
+# Výkon
+
+---
+
+Cíl: 60fpx
+
 ---
 
 ## Vykreslovací workflow prohlížeče
@@ -117,7 +213,6 @@ export default Listed;
 Rendering/Painting/Displaying vs. Just  Displaying
 ```
 
-
 ---
 ## Reflows
 
@@ -151,7 +246,102 @@ border-radius	...
 pixely musí být překresleny
 ```
 ---
+## GPU Accelerated
 
+> -/-/-/displaying
+
+```
+transform	filter*	opacity
+```
+
+```notes
+filter: blur, drop-shadow jsou výjimka
+```
+---
+## Tipy
+
+- `top`, `left` -> `transform(translate)`
+- `width`, `height` -> `transform(scale)`
+- `background-color` -> `filter`
+
+export default Listed;
+
+---
+
+# [React-transition-group](https://github.com/reactjs/react-transition-group)
+
+---
+
+## [React-transition-group](https://github.com/reactjs/react-transition-group)
+- Nejvíce vanilla řešení
+- Dříve `react-addons-*`
+
+export default Listed;
+---
+
+## Komponenty
+
+- `<Transition />`
+- `<CSSTransition />`
+- `<TransitionGroup />`
+
+export default Listed;
+---
+## Stavy animace
+
+```
++--------+    +-------+    +------+
+| Appear | -> | Enter | -> | Exit |
++--------+    +-------+    +------+
+```
+---
+
+## Demo - CSS Transition
+
+---
+## Příklad - CSS Transition
+
+```notes
+Notifikace ve spod stránky
+```
+
+---
+
+## Demo - Transition
+
+```notes
+Zapouzdření Fade animace
+```
+---
+
+## Demo - group
+
+```notes
+Přídá / odebere ze seznamu
+```
+---
+
+## Příklad
+
+```notes
+swipeable tabs
+```
+---
+## Co dál?
+
+- React-motion
+- React-pose
+
+```notes
+spring
+staggering
+mouse movement
+```
+---
 ## Zdroje
 
 - [Silky smooth animation with CSS](https://www.youtube.com/watch?v=bEoLCZzWZX8)
+
+---
+
+# Hooks
